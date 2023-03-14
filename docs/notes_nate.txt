@@ -1,0 +1,5 @@
+1) Check that the similar products are linked to books/movie/...
+2) Check that every products have 5 similar
+3) Data persitency (fast, feature, store, ...)
+4) Be sure about centrality and not just recommender
+5) Heterogenous nodes (careful)
