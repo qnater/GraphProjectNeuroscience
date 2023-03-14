@@ -3,3 +3,11 @@
 3) Data persitency (fast, feature, store, ...)
 4) Be sure about centrality and not just recommender
 5) Heterogenous nodes (careful)
+
+
+#sophie
+- check if the similar products always belong to the same category
+—> if it is the case: the graph will have components, treat then them separately
+- either way, take the category information into account
+- in general: take advantage of the complexity of data / of all informations given in the dataset
+- better define the component analysis (also: what do we define popularity)
