@@ -2,35 +2,43 @@ import networkx as nx
 import random
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-
-
+import re
 
 class explore_graph:
 
     # Quentin Nater
-    # Display a simple graph sample with a file
-    def display_simple_graph(myGraph):
+    # Display a complex graph sample with a file - test
+    def construct_complex_file(file_name):
 
-        nx.draw(myGraph, with_labels=True)
-        plt.show()
+        # create a new graph
+        graph = nx.Graph()
 
-        return myGraph
+        # read and extract every nodes and edges
+        with open(file_name, "r", encoding='utf-8') as f:
+            for line in f:
 
-    # Quentin Nater
-    # Display a simple graph sample with a file - test
-    def display_simple_file(file_name):
-        myGraph = nx.read_edgelist(file_name, create_using=nx.DiGraph(), nodetype=int)
+                # read nodes ===============================================
+                asin = ""
+                match = re.search(r'ASIN:\s*(\w+)', line)
+                if match:
+                    asin = match.group(1)
+                    #print(str(asin))
+                    # add a node to the graph for the ASIN value
+                    graph.add_node(asin)
 
-        # number of nodes to sample
-        num_nodes = 1000
+                # read edges ===============================================
+                # use regular expressions to extract the ASIN value
+                match = re.search(r'similar:\s*(\w+)', line)
+                if match:
+                    similars = line.split(sep="  ")
 
-        # randomly sample nodes
-        nodes_list = list(myGraph.nodes())
-        sampled_nodes = random.sample(nodes_list, num_nodes)
+                    for similar in similars:
+                        graph.add_edge(*(asin, similar))
+                        #print("("+str(asin) + ", " + str(similar) + ")")
 
-        # create a subgraph with the sampled nodes and all their edges
-        sampled_graph = myGraph.subgraph(sampled_nodes)
+        print("The graph has been successfully constructed !")
 
-        # draw the sampled graph
-        nx.draw(sampled_graph, with_labels=True)
-        plt.show()
+        return graph
+
+
+
