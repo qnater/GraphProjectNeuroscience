@@ -4,7 +4,7 @@ import networkx as nx
 class AnalyticsGraph:
 
     # Creator : Quentin Nater
-    # reviewed by :
+    # Reviewed by :
     #
     # myGraph       : networkX - graph of the dataset
     #
