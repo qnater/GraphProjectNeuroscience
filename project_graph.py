@@ -2,7 +2,7 @@ import matplotlib as mpl
 import networkx as nx
 
 from explore.exploration_graph import explore_graph as eg
-
+## test sophie
 # QUENTIN NATER - 01.03.2023 - ASS 1 - EX 2
 if __name__ == '__main__':
     print("\n==================================================")
