@@ -1,3 +1,5 @@
+import string
+
 import networkx as nx
 import random
 import matplotlib.pyplot as plt
@@ -41,14 +43,23 @@ class explore_graph:
         return graph
 
 
+    def convert_asin_to_int(asin):
+        alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        if any(char.isalpha() for char in asin):
+            for char in asin:
+                if char.isalpha():
+                    asin = asin.replace(char, str(alphabet.index(char.upper()) + 10))
+
+        return int(asin)
+
     # Quentin Nater
     # Display a complex graph sample with a file - test
     def construct_simple_file(file_name, limit):
 
         # create a new graph
-        graph = nx.Graph()
+        graph = nx.DiGraph()
 
-        i, asin = 0, ""
+        i, asin_int = 0, 0
 
         # read and extract every nodes and edges
         with open(file_name, "r", encoding='utf-8') as f:
@@ -60,8 +71,8 @@ class explore_graph:
                 if match:
                     asin = match.group(1)
                     # add a node to the graph for the ASIN value
-                    graph.add_node(asin)
-                    print("ASIN : " + asin)
+                    asin_int = explore_graph.convert_asin_to_int(asin)
+                    graph.add_node(asin_int)
 
                 # read edges ===============================================
                 # use regular expressions to extract the ASIN value
@@ -72,8 +83,9 @@ class explore_graph:
                     for similar in similars:
                         inc += 1
                         if inc > 2:
-                            graph.add_edge(*(asin, similar))
-                            print("("+str(asin) + ", " + str(similar) + ")")
+                            similar_int = explore_graph.convert_asin_to_int(similar)
+                            graph.add_edge(*(asin_int, similar_int))
+                            print("("+str(asin_int) + ", " + str(similar_int) + ")")
 
                 if i == limit:
                     break
