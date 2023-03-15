@@ -10,7 +10,7 @@ ASIN: 020XX
   title: Patterns of Preaching: A Sermon Sampler
   group: Book
   salesrank: 396585
-  similar: 5  A1  05  AV
+  similar: 5  A1  05  AV  PQ
   categories: 2
    |Books[283155]|Subjects[1000]|Religion & Spirituality[22]|Christianity[12290]|Clergy[12360]|Preaching[12368]
    |Books[283155]|Subjects[1000]|Religion & Spirituality[22]|Christianity[12290]|Clergy[12360]|Sermons[12370]
@@ -23,7 +23,7 @@ ASIN: 03
   title: Candlemas: Feast of Flames
   group: Book
   salesrank: 168596
-  similar: 2  02X  A1
+  similar: 2  02X  A1  PQ
   categories: 2
    |Books[283155]|Subjects[1000]|Religion & Spirituality[22]|Earth-Based Religions[12472]|Wicca[12484]
    |Books[283155]|Subjects[1000]|Religion & Spirituality[22]|Earth-Based Religions[12472]|Witchcraft[12486]
@@ -72,7 +72,7 @@ ASIN: 06
   title: Prayers That Avail Much for Business: Executive
   group: Book
   salesrank: 455160
-  similar: 5  A1  02X  03  AV  05
+  similar: 5  A1  02X  03  AV  05  PQ
   categories: 2
    |Books[283155]|Subjects[1000]|Religion & Spirituality[22]|Christianity[12290]|Worship & Devotion[12465]|Prayerbooks[12470]
    |Books[283155]|Subjects[1000]|Religion & Spirituality[22]|Christianity[12290]|Christian Living[12333]|Business[297488]
