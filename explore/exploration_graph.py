@@ -17,7 +17,7 @@ class explore_graph:
         return myGraph
 
     # Quentin Nater
-    # Display a simple graph sample with a file
+    # Display a simple graph sample with a file - test
     def display_simple_file(file_name):
         myGraph = nx.read_edgelist(file_name, create_using=nx.DiGraph(), nodetype=int)
 
