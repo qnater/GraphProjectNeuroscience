@@ -1,13 +1,15 @@
 import matplotlib as mpl
 import networkx as nx
 
-from explore.exploration_graph import explore_graph as eg
+from explore.exploration_graph import ExploreGraph as eg
+from visualization.visualization_graph import VisualizationGraph as vg
+from analytics.analytics_graph import AnalyticsGraph as ag
 
 # QUENTIN NATER - 01.03.2023 - ASS 1 - EX 2
 if __name__ == '__main__':
-    print("\n==================================================")
-    print("====Quentin=Nater=====UNI-FR======================")
-    print("==================================================\n")
+    print("\n=========================================================================================")
+    print("========================INFLUENCE=OF=POPULARITY=ON=SALES===UNI-FR========================")
+    print("=========================================================================================\n")
 
     mpl.use('TkAgg')  # without it, cannot run my plots (maybe personal)
 
@@ -17,6 +19,8 @@ if __name__ == '__main__':
         myGraph = nx.Graph()
         myGraph.add_nodes_from([1, 2, 3, 4, 5, 6, 7])
         myGraph.add_edges_from([(1, 2), (1, 4), (1, 7), (2, 5), (2, 6), (3, 5), (3, 6)])
-        eg.display_simple_graph(myGraph)
+        vg.display_simple_graph(myGraph)
     elif tag == "prod":
-        eg.display_simple_file("./dataset/roadNet-CA.txt.gz")
+        graph = eg.construct_graph_by_file("./dataset/amazon-meta.txt")
+        vg.display_simple_graph(graph, True)
+        ag.centrality_betweenness_library(graph)
