@@ -28,7 +28,7 @@ class ExploreGraph:
     # displayDetail : bool - display the detail of the construction
     #
     # Construct a complex graph with a file
-    def construct_graph_by_file(file_name, limit=20000, display=True, displayDetail=False): # limit = 15010574 reads the whole file
+    def construct_graph_by_file(file_name, limit=15010574, display=True, displayDetail=False):
         print(">> You have called the construction of your graph, please wait :)")
 
         # initialization of the variables

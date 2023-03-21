@@ -15,7 +15,7 @@ class AnalyticsGraph:
         nodes = nx.betweenness_centrality(graph) # Centrality dictionary: node as key and its betweenness centrality as value
 
         for node in nodes.keys():
-            if round(nodes[node],2) > 0.0:
+            if round(nodes[node], 2) > 0.0:
                 print("\t\t\t\t" + str(node) + " : " + str(round(nodes[node], 3)))
         else:
             print("\t\t\t\t Result: There are no central nodes.")
